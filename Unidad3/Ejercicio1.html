@@ -1,0 +1,21 @@
+<!--Crear funcion que aplique el iva al dato que ha introducido el usuario-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let input = prompt("Introduce un valor");
+        let inputIva = eval(input+"+("+input+"*0.21)");
+        //alert(inputIva);
+        let inputParsed = parseInt(inputIva);
+        alert(input+" aplicando 21% de iva = "+inputParsed);
+    </script>
+</body>
+
+</html>
