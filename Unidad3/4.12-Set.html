@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //No se pueden repetir datos
+        const miSet = new Set([34, "dk", true, ""]);
+
+        const miSet1 = new Set();
+        miSet1.add(1);
+        miSet1.add(5);
+        miSet1.add(5);
+        miSet1.add(7);
+        miSet1.add("Algún texto");
+        const objeto = { a: "hola", b: 12 };
+        miSet1.add(objeto);
+        miSet1.add({ a: "texto", b: 28 });
+        console.log(miSet1);
+
+        //CONSULTAR EL CONJUNTO
+        miSet1.has(1);
+        miSet1.has(Math.sqrt(25));
+        miSet1.has(objeto);
+
+        miSet1.size;
+        miSet1.delete(5);
+        miSet1.delete(objeto);
+
+        console.log(miSet1);
+
+        //ITERAR SOBRE CONJUNTOS
+
+        for (let item of miSet1)
+            console.log(item);
+
+        for (let item of miSet1.values())
+            console.log(item);
+
+        const miArray=Array.from(miSet1);
+
+        miSet1.add(document.body)
+        miSet1.has(document.querySelector('body'));
+        console.log(miSet1);
+    </script>
+</body>
+
+</html>

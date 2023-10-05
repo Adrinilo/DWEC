@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let coches = new Array("Ferrari", "BMW", "Dacia");
+        console.log(coches);
+        coches.splice(2, 1, "Audi");
+        document.write(coches);
+        console.log(coches);
+        let miPeces = new Array("Angel", "Payaso", "Trompeta", "Mariposa");
+        console.log(miPeces);
+        let removed=miPeces.splice(0,2,"papagayo", "anemona", "azul");
+        console.log(miPeces);
+        document.write("<br>"+miPeces);
+    </script>
+</body>
+
+</html>
