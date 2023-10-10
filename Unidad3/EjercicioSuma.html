@@ -1,0 +1,40 @@
+<!--Declara una funcion flecha que acepte como argumento un array de numeros y devuelva la suma de todos ellos-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let numeros = new Array("1", "9", "6", "14", "3");
+        function flecha(array) {
+            let result  = ""
+            for (const x of array.values()) {
+                result = eval(result+"+"+x);
+            }
+            return result
+        }
+        document.write(flecha(numeros));
+    </script>
+
+    <!--//Solucion Profesor
+    <script type="text/javascript">
+        const sumaE1 = (lista) => {
+            let contador = 0;
+            lista.forEach(elemento => {
+                contador += elemento;
+            })
+            return contador;
+        }
+
+        const a1 = new Array(23,23,25,26,32);
+        document.write(a1)        
+        console.log("La suma es "+sumaE1(a1));
+    </script>-->
+</body>
+
+</html>
