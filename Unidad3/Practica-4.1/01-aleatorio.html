@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleatorio</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="ejercicio1">
+            <h2>Ejercicio 1</h2>
+        </div>
+        <div id="ejercicio2">
+            <h2>Ejercicio 2</h2>
+            <h3>Los numeros premiados son:</h3>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let num = 40;
+        let premios = new Array();
+        const randomnumber = (nummax) => {
+            let random = 0;
+            random = Math.round(Math.random() * nummax);
+            return random;
+        };
+        for (i = 0; i <= 10; i++) {
+            let numero = randomnumber(num);
+            premios.push(numero);
+        }
+        let resul = randomnumber(num);
+
+        //document.write("Numero aleatorio: " + resul + "<br>");
+        //document.write("Array aletorio: " + premios);
+
+        var contenedor1 = document.getElementById("ejercicio1");
+        let nodoTexto=document.createTextNode("Este es el nodo texto");
+
+        const div1 = document.createElement("div");
+        contenedor1.appendChild(div1);
+        div1.appendChild(document.createTextNode("Numero aleatorio: " + resul));
+        const div2= document.createElement("div");
+        contenedor1.appendChild(div2);
+        div2.appendChild(document.createTextNode("Array aletorio: " + premios));
+
+
+        var contenedor2 = document.getElementById("ejercicio2");
+        premios.forEach(elemento => {
+            const alerta = document.createElement("div");
+            contenedor2.appendChild(alerta);
+            alerta.innerHTML= elemento;
+        });
+    </script>
+</body>
+
+</html>
