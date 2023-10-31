@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="00-estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <form action="./datos.php" method="post">
+            <h2>Controles input HTML5</h2>
+            <div class="form-group">
+                <label for="busqueda">Búsqueda</label>
+                <input type="search" name="busqueda" id="busqueda">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="correo">E-mail</label>
+                <input type="email" name="correo" id="correo">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="url">Ingresa URL</label>
+                <input type="url" name="url" id="url">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="edad">Ingresa edad</label>
+                <input type="number" name="edad" id="edad" min="1" max="10" step="2">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="price">Escoge el máximo precio</label>
+                <input type="range" name="price" id="price" min="50000" max="500000" step="100" value="250000">
+               <output class="price-output" for="price"></output>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="datetime-local" name="datetime" id="datetime">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="month" name="month" id="month">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="time" name="time" id="time">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="week" name="week" id="week">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="myDate">Disponibilidad</label>
+                <input type="date" name="myDate" id="myDate" min="2013-06-01" max="2013-08-31" step="7">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="color">Selecciona un color</label>
+                <input type="color" name="color" id="color">
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="submit">Enviar datos</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
