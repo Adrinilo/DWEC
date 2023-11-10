@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax con XMLHttpRequest</title>
+    <link rel="stylesheet" href="01-estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ajax con XMLHttpRequest</h1>
+        <div class="contenido">
+
+        </div>
+        <button id="btn">POST!</button>
+    </div>
+    <script>
+        const contenido = document.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+
+        const xhr = new XMLHttpRequest();
+        
+        xhr.addEventListener("error", function () {
+            //errores que escapan al objeto xhr
+            contenido.classList.add("error");
+        });
+
+        //asignar evento a boton
+        btn.addEventListener("click", e => {
+            xhr.open("POST", "http://localhost/save-json.php");
+
+            const obj = {
+                nombre: "paloma",
+                apellido: "pérez"
+            }
+
+            xhr.send(JSON.stringify(obj));
+        });
+
+
+    </script>
+</body>
+</html>

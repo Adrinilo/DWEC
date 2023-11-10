@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax con XMLHttpRequest</title>
+    <link rel="stylesheet" href="01-estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ajax con XMLHttpRequest</h1>
+        <div class="contenido">
+
+        </div>
+        <button id="btn">GET!</button>
+    </div>
+    <script>
+        const contenido = document.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+
+        const xhr = new XMLHttpRequest();
+        
+        function loaded() {
+            console.log(xhr.statusText);
+            console.log(xhr.status);
+            if (xhr.status >= 200 && xhr.status < 400) {
+                //ha ido bien la consulta
+                contenido.classList.add("success");
+                contenido.innerHTML = xhr.response.nombre;
+            } else {
+                //ha habido algún tipo de error
+                contenido.classList.add("error");
+            }
+        }
+
+        xhr.addEventListener("readystatechange", function() {
+            switch (this.readyState) {
+                case XMLHttpRequest.OPENED: //1
+                console.log("OPENED");
+                break;
+                case XMLHttpRequest.HEADERS_RECEIVED: //2
+                console.log("HEADERS!");
+                break;
+                case XMLHttpRequest.LOADING: //3
+                console.log("LOADING...");
+                break;
+                case XMLHttpRequest.DONE: //4
+                console.log("DONE");
+                loaded();
+                break;
+            }
+        });
+
+        xhr.addEventListener("error", function () {
+            //errores que escapan al objeto xhr
+            contenido.classList.add("error");
+        });
+
+        //asignar evento a boton
+        btn.addEventListener("click", e => {
+            xhr.open("GET", "./user. json");
+            xhr.responseType = "json";
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

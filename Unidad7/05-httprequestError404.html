@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax con XMLHttpRequest</title>
+    <link rel="stylesheet" href="01-estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ajax con XMLHttpRequest</h1>
+        <div class="contenido">
+
+        </div>
+        <button id="btn">GET!</button>
+    </div>
+    <script>
+        const contenido = document.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+
+        const xhr = new XMLHttpRequest();
+        
+        xhr.addEventListener("load", function() {
+            console.log(this.statusText);
+            console.log(this.status);
+            if (this.status === 200) {
+                //ha ido bien la consulta
+                contenido.classList.add("success");
+            } else {
+                //ha habido algún tipo de error
+                contenido.classList.add("error");
+            }
+        });
+
+        //asignar evento a boton
+        btn.addEventListener("click", e => {
+            xhr.open("GET", "./user.json");
+            xhr.responseType = "json";
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
