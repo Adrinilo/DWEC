@@ -29,12 +29,19 @@
 
         #menu li ul {
             background: #E4ADFF;
-            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s;
+        }
+
+        #menu li.mostrar ul {
+            max-height: 500px;
         }
     </style>
 </head>
 
 <body>
+
     <nav id="menu">
         <ul>
             <li>
@@ -74,31 +81,48 @@
                     <li><a href="#">Opción 3</a></li>
                 </ul>
             </li>
+
+
         </ul>
+
     </nav>
 
+
     <script>
-        //se trata de crear una función que invoquemos cuando pulsemos en cualquier enlace de primer nivel
-        //la función mostrará u ocultará el UL asociado 
+        window.addEventListener("load", e => {
+            const encabezados = document.querySelectorAll("#menu>ul>li>a");
+            console.log(encabezados);
 
-        //Lo realizaremos cambiando el estilo directamente con el.style
+            //asignamos despliega como función manejadora
+            encabezados.forEach(element => {
+                element.addEventListener("click", despliega)
+            })
 
-        const botones = document.querySelectorAll("#menu>ul>li>a");
-        console.log(botones);
+            //esta es la sencilla
+            /*function despliega(e) {
+                e.preventDefault();
+                const nodo = e.target;
+                nodo.parentNode.classList.toggle("mostrar");
+            }*/
 
-        botones.forEach(param => {
-            param.addEventListener("click", e => {
-                //subo al padre
-                const li = param.parentNode;
-                //bajo al primer ul contenido dentro del li
-                const ul = param.querySelector("ul");
+            function despliega(e) {
+                e.preventDefault();
+                const nodo = e.target;
+                var lipadre = nodo.parentNode;
 
-                if (ul.style.display === "block") {
-                    ul.style.display = "none";
-                } else {
-                    ul.style.display = "block";
+                //si esta mostrado oculta sobre el que hemos pinchado
+                if (lipadre.classList.contains("mostrar")) {
+                    lipadre.classList.remove("remove");
                 }
-            });
+                //sino, oculta otro si lo hibiese y muestra sobre el que pinchamos
+                else {
+                    mostrados = lipadre.parentNode.getElementsByClassName("mostrar");
+                    for (var i = 0; i < mostrados.length; i++) {
+                        mostrados[i].classList.remove("mostrar");
+                    }
+                    lipadre.classList.add("mostrar");
+                }
+            }
         });
     </script>
 

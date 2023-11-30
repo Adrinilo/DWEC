@@ -1,131 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú desplegable</title>
-
-    <style type="text/css">
-        * {
-            margin: 0px;
-            padding: 0px;
-            text-decoration: none;
-            list-style-type: none;
-            font-family: sans-serif;
-
-        }
-
-        #menu li a {
-            display: block;
-            color: black;
-            padding: .5em;
-        }
-
-        #menu>ul>li>a {
-            background: #C8FFAD;
-        }
-
-        #menu li ul {
-            background: #E4ADFF;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .5s;
-        }
-
-        #menu li.mostrar ul {
-            max-height: 500px;
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>DOM básico y atributos XHTML</title>
 </head>
 
 <body>
-
-    <nav id="menu">
-        <ul>
-            <li>
-                <a href="#">Item 1</a>
-                <ul>
-                    <li><a href="#">Opción 1</a></li>
-                    <li><a href="#">Opción 2</a></li>
-                    <li class="separador"></li>
-                    <li><a href="#">Opción 3</a></li>
-                    <li><a href="#">Opción 4</a></li>
-                    <li><a href="#">Opción 5</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Item 2</a>
-                <ul>
-                    <li><a href="#">Opción 1</a></li>
-                    <li class="separador"></li>
-                    <li><a href="#">Opción 2</a></li>
-                    <li><a href="#">Opción 3</a></li>
-                    <li><a href="#">Opción 4</a></li>
-                    <li><a href="#">Opción 5</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Item 3</a>
-                <ul>
-                    <li><a href="#">Opción 1</a></li>
-                    <li><a href="#">Opción 2</a></li>
-                    <li><a href="#">Opción 3</a></li>
-                    <li class="separador"></li>
-                    <li><a href="#">Opción 4</a></li>
-                    <li><a href="#">Opción 5</a></li>
-                    <li class="separador"></li>
-                    <li><a href="#">Opción 1</a></li>
-                    <li><a href="#">Opción 2</a></li>
-                    <li><a href="#">Opción 3</a></li>
-                </ul>
-            </li>
-
-
-        </ul>
-
-    </nav>
-
-
+    <p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+        libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+        posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+        porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+        faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+        posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+    <a id="enlace_1" href="#">Ocultar contenidos</a>
+    <br />
+    <p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+        libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+        posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+        porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+        faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+        posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+    <a id="enlace_2" href="#">Ocultar contenidos</a>
+    <br />
+    <p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+        libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+        posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+        porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+        faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+        posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+    <a id="enlace_3" href="#">Ocultar contenidos</a>
     <script>
-        window.addEventListener("load", e => {
-            const encabezados = document.querySelectorAll("#menu>ul>li>a");
-            console.log(encabezados);
+        /*  A partir de la página web proporcionada, completar el código JavaScript para que:
+ 
+ 1.   Cuando se pinche sobre el primer enlace, se oculte su sección relacionada
+ 2.   Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de contenidos
+ 3.   Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del primer enlace
+ 4.   Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (pista: textContent);
+ 
+  */
 
-            //asignamos despliega como función manejadora
-            encabezados.forEach(element => {
-                element.addEventListener("click", despliega)
-            })
+        const enlaces = document.querySelectorAll("a");
+        console.log(enlaces);
 
-            //esta es la sencilla
-            /*function despliega(e) {
-                e.preventDefault();
-                const nodo = e.target;
-                nodo.parentNode.classList.toggle("mostrar");
-            }*/
+        enlaces.forEach(param => {
+            param.addEventListener("click", e => {
+                let id = param.id;
+                id = "contenidos_"+id.slice(-1);
+                const seccion = document.getElementById(id);
 
-            function despliega(e) {
-                e.preventDefault();
-                const nodo = e.target;
-                var lipadre = nodo.parentNode;
-
-                //si esta mostrado oculta sobre el que hemos pinchado
-                if (lipadre.classList.contains("mostrar")) {
-                    lipadre.classList.remove("remove");
+                if (seccion.style.display === "block" || seccion.style.display === "") {
+                    seccion.style.display = "none";
+                    param.textContent = "Mostrar contenidos"
+                } else {
+                    seccion.style.display = "block";
+                    param.textContent = "Ocultar contenidos"
                 }
-                //sino, oculta otro si lo hibiese y muestra sobre el que pinchamos
-                else {
-                    mostrados = lipadre.parentNode.getElementsByClassName("mostrar");
-                    for (var i = 0; i < mostrados.length; i++) {
-                        mostrados[i].classList.remove("mostrar");
-                    }
-                    lipadre.classList.add("mostrar");
-                }
-            }
+            });
         });
-    </script>
 
+    </script>
 </body>
 
 </html>
