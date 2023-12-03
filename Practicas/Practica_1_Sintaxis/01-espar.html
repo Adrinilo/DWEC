@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-espar</title>
+</head>
+
+<body>
+    <script>
+        /*const num = prompt("Introduzca un número: ");
+        console.log(num);
+        if(num % 2 === 0) {
+            console.log("Es par");
+        } else {
+            console.log("Es impar");
+        }*/
+
+        const num = prompt("Introduzca un número: ");
+        console.log(num);
+        if (!isNaN(num)) {
+            if (num % 2 === 0) {
+                console.log("Es par");
+            } else {
+                console.log("Es impar");
+            }
+        } else {
+            console.log("El parametro introducido no es un número");
+        }
+    </script>
+</body>
+
+</html>

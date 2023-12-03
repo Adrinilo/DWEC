@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-carta</title>
+</head>
+
+<body>
+    <script>
+        const nombre = prompt("Introduzca el Nombre del destinatario: ").trim();
+        const curso = prompt("Introduzca el nombre del Curso: ").trim();
+        const localidad = prompt("Introduzca el nombre de la Localidad: ").trim();
+        const fecha_inicio = prompt("Introduzca la fecha de inicio del curso: ").trim();
+        const fecha_fin = prompt("Introduzca la fecha de fin del curso: ").trim();
+        //let div1 = document.getElementById("div1");
+        let texto = `Estimado ${nombre},
+
+        Bienvenido al curso de ${curso} que se celebrará en la localidad de ${localidad} entre
+        las fechas ${fecha_inicio} y ${fecha_fin}. Espero que el curso se desarrolle según sus
+        expectativas. Estaremos encantados de atenderle
+        
+        Atentamente,
+        La dirección.`;
+        alert(texto);
+    </script>
+</body>
+
+</html>

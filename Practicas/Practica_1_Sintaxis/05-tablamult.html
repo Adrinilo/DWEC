@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-tablamultiplicar</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="encabezado"></h1>
+    </div>
+
+    <script>
+        const num = prompt('Introduce un numero');
+        let contenedor = document.getElementById("container");
+        
+        if (!isNaN(num) && num >= 0) {
+            let encabezado = document.getElementById("encabezado");
+            let textoencabezado = "Tabla de multiplicar de " + num;
+            encabezado.innerText = textoencabezado;
+            console.log(textoencabezado);
+            
+            const list = document.createElement("ul");
+            for (let i = 1; i <= 10; i++) {
+                const element = document.createElement("li");
+                let resultado = i * num;
+                let text = num + " * " + i + " = " + resultado
+                element.innerText = text;
+                console.log(text);
+                list.appendChild(element);
+            }
+            contenedor.appendChild(list);
+        } else {
+            console.warn('El parametro introducido no es un numero');
+        }
+    </script>
+</body>
+
+</html>
