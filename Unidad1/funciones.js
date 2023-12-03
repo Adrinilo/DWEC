@@ -1,10 +1,10 @@
 
 /*Funciones anonimas*/
-let funccion=function(parametro){
-    return paramero+":)";
+let funcion=function(parametro){
+    return parametro+":)";
 }
 
-console.log(funccion("HOla"));
+console.log(funcion("HOla"));
 
 /*CALLBACK*/
 
@@ -31,7 +31,7 @@ function getIdentificacion2(numero,letra,callback){
     return identificacion;
 }
 
-getIdentificacion2("45674","R",function(numero,letr){
+getIdentificacion2("45674","R",function(numero,letra){
      console.log(numero+"-"+letra);
      return numero+"-"+letra;
 });
